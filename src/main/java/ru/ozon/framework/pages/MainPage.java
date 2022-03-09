@@ -2,7 +2,7 @@ package ru.ozon.framework.pages;
 
 import org.junit.jupiter.api.Assertions;
 
-public class MainPage extends BasePage{
+public class MainPage extends BasePage {
 
     public void checkPageOpening() {
         Assertions.assertTrue(

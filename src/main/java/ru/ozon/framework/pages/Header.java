@@ -32,7 +32,7 @@ public class Header extends BasePage {
         fillInputField(searchInput, textToSearch);
 
         Assertions.assertTrue(
-                checkInputFilling(searchInput,textToSearch ),
+                checkInputFilling(searchInput, textToSearch),
                 "Поле поиска не заполнено значением '" + textToSearch + "'"
         );
     }
@@ -64,7 +64,7 @@ public class Header extends BasePage {
     public void setLocation(String city) {
         String currentLocation = location.getText().trim().toLowerCase();
         String lowerCasedCity = city.toLowerCase();
-        if(!currentLocation.equals(lowerCasedCity)) {
+        if (!currentLocation.equals(lowerCasedCity)) {
             waitUntilElementToBeClickable(location).click();
             fillInputField(selectCityInput, lowerCasedCity);
             waitForTextToBePresentInElement("//h2[contains(text(), 'Выберите город')]/..//li[1]", city);

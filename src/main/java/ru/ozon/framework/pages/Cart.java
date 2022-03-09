@@ -3,17 +3,11 @@ package ru.ozon.framework.pages;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.ozon.framework.utils.Excel;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,9 +63,9 @@ public class Cart extends BasePage {
 
     public void checkTextOnYourCartTotalBlock() {
         int valuesCount = Excel.getAllValuesFromColumn(0).size();
-        String text =" товар";
+        String text = " товар";
         Assertions.assertTrue(
-                yourCartText.getText().trim().startsWith(valuesCount +  text),
+                yourCartText.getText().trim().startsWith(valuesCount + text),
                 "Текст 'Ваша корзина " + valuesCount + text + "' не отображается"
         );
     }

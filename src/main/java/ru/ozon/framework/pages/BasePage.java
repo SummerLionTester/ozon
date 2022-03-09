@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.ozon.framework.managers.DriverManager;
 
@@ -76,11 +75,11 @@ public class BasePage {
 
     protected void waitForPageToLoad() {
         WebDriver driver = driverManager.getDriver();
-        ExpectedCondition< Boolean > pageLoad = new ExpectedCondition <Boolean> () {
-                    public Boolean apply(WebDriver driver) {
-                        return ((JavascriptExecutor) driverManager.getDriver()).executeScript("return document.readyState").equals("complete");
-                    }
-                };
+        ExpectedCondition<Boolean> pageLoad = new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driverManager.getDriver()).executeScript("return document.readyState").equals("complete");
+            }
+        };
 
         try {
             wait.until(pageLoad);
